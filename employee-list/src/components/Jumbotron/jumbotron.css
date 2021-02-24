@@ -1,4 +1,10 @@
 .jumbotron {
-    /* background:#2c323c; */
+    background: #808080;
     text-align: center;
+    color: #fff;
+}
+
+.lead {
+    font-size: 25px;
+    margin-top: 20px;
 }
