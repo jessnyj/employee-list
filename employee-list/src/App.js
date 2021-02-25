@@ -2,7 +2,7 @@ import React from "react";
 // import Wrapper from "./components/Wrapper/wrapper";
 import Jumbotron from "./components/Jumbotron/jumbotron";
 import Search from "./components/Search/search";
-import Table from "./components/Table";
+import Table from "./components/Table/table";
 
 function App() {
   return(
