@@ -1,20 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Jumbotron from "./components/Jumbotron/jumbotron";
 import Search from "./components/Search/search";
 import Table from "./components/Table/table";
 import API from "./utils/API";
 
+
 function App() {
 
-  const [users, setUsers] = useState([]);
+  // const [user, setUser] = useState({});
+  // const [users, setUsers] = useState([]);
+  // const [userIndex, setUserIndex] = useState(0);
 
   useEffect(() => {
     loadUsers()
-  });
+  }, []);
 
-  const loadUsers = (user) => {
-    API.getUsers(user).then((users) => {
-      setUsers(users)
+  const loadUsers = () => {
+    API.getUsers().then((users) => {
+      // setUsers(users)
     })
     .catch(err => console.log(err));
   };
@@ -24,7 +27,13 @@ function App() {
     <div>
       <Jumbotron />
       <Search />
-      <Table />
+      <Table 
+      // image={user.image}
+      // name={(user.firstname) + (user.lastname)}
+      // phone={user.phone}
+      // email={user.email}
+      // dob={user.dob}
+      />
     </div>
   );
 }

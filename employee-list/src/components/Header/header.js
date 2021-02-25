@@ -3,7 +3,7 @@ import "./header.css";
 
 function Header() {
     return (
-        <table class="table table-striped">
+        <table className="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Image</th>
