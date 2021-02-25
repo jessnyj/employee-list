@@ -8,10 +8,10 @@ export default {
                 const results = users.map((user) => {
                 const DOB = user.dob.date.split('T');
                     return {
-                        name: `${user.name.first} ${user.name.last}`,
-                        email: user.email,
                         image: user.picture.large,
+                        name: `${user.name.first} ${user.name.last}`,
                         phone: user.phone,
+                        email: user.email,
                         dob: DOB[0]
                     };
                 });

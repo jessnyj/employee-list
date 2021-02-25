@@ -8,7 +8,7 @@ import API from "./utils/API";
 function App() {
 
   // const [user, setUser] = useState({});
-  // const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
   // const [userIndex, setUserIndex] = useState(0);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function App() {
 
   const loadUsers = () => {
     API.getUsers().then((users) => {
-      // setUsers(users)
+      setUsers(users)
     })
     .catch(err => console.log(err));
   };
@@ -28,11 +28,7 @@ function App() {
       <Jumbotron />
       <Search />
       <Table 
-      // image={user.image}
-      // name={(user.firstname) + (user.lastname)}
-      // phone={user.phone}
-      // email={user.email}
-      // dob={user.dob}
+      users={users}
       />
     </div>
   );
