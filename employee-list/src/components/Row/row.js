@@ -4,7 +4,7 @@ import "./row.css";
 function Row({ name, email, image, phone, dob }) {
     return (
         <tr>
-            <td>{image}</td>
+            <td><img src={image}></img></td>
             <td>{name}</td>
             <td>{phone}</td>
             <td>{email}</td>
