@@ -35,7 +35,7 @@
 * Bootstrap
 
 ## Description
-
+This application allows a user to view their entire employee directory, filter their employees by ascending and descending order, and allows them to search for a user by name.
 
 ## Work Involved
 For this application, I created the front end aspects with Bootstrap. For the overall functionality of the site, I utilized React, and added the randomUser API for the employee profiles.
