@@ -17,7 +17,7 @@
 
 ## Deployed Link
 * Click this link to view the site.
-[Deployed Link]()
+[Deployed Link](https://jessnyj.github.io/employee-list/)
 
 ## Site Gif
 ![Site](./public/images/employee-list.gif)
