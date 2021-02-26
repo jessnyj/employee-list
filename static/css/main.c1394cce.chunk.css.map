@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Jumbotron/jumbotron.css"],"names":[],"mappings":"AAAA,WACI,eAAmB,CACnB,iBAAkB,CAClB,UACJ,CAEA,MACI,cAAe,CACf,eACJ","file":"main.c1394cce.chunk.css","sourcesContent":[".jumbotron {\n    background: #808080;\n    text-align: center;\n    color: #fff;\n}\n\n.lead {\n    font-size: 25px;\n    margin-top: 20px;\n}"]}
