@@ -9,7 +9,12 @@ function Table(props) {
                 <thead>
                     <tr>
                         <th scope="col">Image</th>
-                        <th scope="col">Name <i className="fa fa-caret-down" aria-hidden="true"></i></th>
+                        <th scope="col"
+                            className="sortCol"
+                            onClick={props.sortByName}
+                            data-value={props.sort}>
+                            Name <i className="fa fa-caret-down" aria-hidden="true"></i>
+                        </th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
                         <th scope="col">DOB</th>
@@ -17,15 +22,14 @@ function Table(props) {
                 </thead>
                 <tbody>
                     {props.users.map(user => (
-                    <Row 
-                    id={user.id}
-                    key={user.id}
-                    image={user.image}
-                    name={user.name}
-                    phone={user.phone}
-                    email={user.email}
-                    dob={user.dob}
-                    />
+                        <Row
+                            key={user.name}
+                            image={user.image}
+                            name={user.name}
+                            phone={user.phone}
+                            email={user.email}
+                            dob={user.dob}
+                        />
                     ))}
                 </tbody>
             </table>
