@@ -30,19 +30,18 @@ function App() {
   const sortByName = (event) => {
     let sortDir = event.target.getAttribute("data-value");
     if (sortDir === "ascending") {
-      setUsers(users.sort((a,b)=> (a.name < b.name ? 1 : -1)));
+      setUsers(users.sort((a, b) => (a.name < b.name ? 1 : -1)));
       setSort("descending");
     } else if (sortDir === "descending") {
-      setUsers(users.sort((a,b)=> (a.name > b.name ? 1 : -1)));
+      setUsers(users.sort((a, b) => (a.name > b.name ? 1 : -1)));
       setSort("ascending");
     } else {
-      setUsers(users.sort((a,b)=> (a.name > b.name ? 1 : -1)));
+      setUsers(users.sort((a, b) => (a.name > b.name ? 1 : -1)));
       setSort("ascending");
     }
   }
 
   // Search for Users
-  // case sensitive
   const searchForUser = (currentSearch) => {
     const searchedUsers = users.filter(
       user => {

@@ -10,7 +10,7 @@ function Table(props) {
                     <tr>
                         <th scope="col">Image</th>
                         <th scope="col" className="sortCol">
-                            Name
+                            Name 
                             <i onClick={props.sortByName} data-value={props.sort}
                                 className="fa fa-sort" aria-hidden="true"></i>
                         </th>
