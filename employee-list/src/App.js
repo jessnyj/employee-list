@@ -15,31 +15,37 @@ function App() {
   useEffect(() => {
     loadUsers()
   }, []);
-  
-// Getting all users and allowing for search
+
+  // Getting all users and allowing for search
   const loadUsers = () => {
     API.getUsers()
-    .then((users) => {
-      // if (users.data.length === 0) {
-      //   throw new Error("No results found.");
-      // }
-      setUsers(users);
-      setUserSearch(users);
-    })
-    .catch(err => console.log(err));
+      .then((users) => {
+        // if (users.data.length === 0) {
+        //   throw new Error("No results found.");
+        // }
+        setUsers(users);
+        setUserSearch(users);
+      })
+      .catch(err => console.log(err));
   };
 
-// Sorting by Name
+  // Sorting by Name
   const sortByName = (event) => {
     let sortDir = event.target.getAttribute("data-value");
-    console.log(sortDir);
-    
+    if (sortDir === "ascending") {
+      setUsers(users.sort((a,b)=> (a.name < b.name ? 1 : -1)));
+      setSort("descending");
+    } else if (sortDir === "descending") {
+      setUsers(users.sort((a,b)=> (a.name > b.name ? 1 : -1)));
+      setSort("ascending");
+    } else {
+      setUsers(users.sort((a,b)=> (a.name > b.name ? 1 : -1)));
+      setSort("ascending");
+    }
   }
 
 
-  // if else statement
-
-// case sensitive
+  // case sensitive
   const searchForUser = (currentSearch) => {
     const searchedUsers = users.filter(
       user => {
@@ -56,17 +62,17 @@ function App() {
     searchForUser(event.target.value);
   };
 
-  return(
+  return (
     <div>
       <Jumbotron />
-      <Search 
-      handleInputChange={handleInputChange}
-      results={search}
+      <Search
+        handleInputChange={handleInputChange}
+        results={search}
       />
-      <Table 
-      users={userSearch}
-      sortByName={sortByName}
-      sort={sort}
+      <Table
+        users={userSearch}
+        sortByName={sortByName}
+        sort={sort}
       />
     </div>
   );
