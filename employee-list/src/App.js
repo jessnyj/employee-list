@@ -20,9 +20,6 @@ function App() {
   const loadUsers = () => {
     API.getUsers()
       .then((users) => {
-        // if (users.data.length === 0) {
-        //   throw new Error("No results found.");
-        // }
         setUsers(users);
         setUserSearch(users);
       })
@@ -44,7 +41,7 @@ function App() {
     }
   }
 
-
+  // Search for Users
   // case sensitive
   const searchForUser = (currentSearch) => {
     const searchedUsers = users.filter(
@@ -57,6 +54,7 @@ function App() {
     setUserSearch(searchedUsers);
   };
 
+  // Input change
   const handleInputChange = event => {
     setSearch(event.target.value);
     searchForUser(event.target.value);
