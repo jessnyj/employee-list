@@ -7,9 +7,7 @@ import API from "./utils/API";
 
 function App() {
 
-  // const [user, setUser] = useState({});
   const [users, setUsers] = useState([]);
-  // const [userIndex, setUserIndex] = useState(0);
 
   useEffect(() => {
     loadUsers()

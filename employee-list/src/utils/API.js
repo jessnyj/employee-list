@@ -8,7 +8,7 @@ export default {
                 const results = users.map((user) => {
                 const DOB = user.dob.date.split('T');
                     return {
-                        image: user.picture.large,
+                        image: user.picture.thumbnail,
                         name: `${user.name.first} ${user.name.last}`,
                         phone: user.phone,
                         email: user.email,
