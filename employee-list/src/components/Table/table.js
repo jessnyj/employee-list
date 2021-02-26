@@ -9,11 +9,10 @@ function Table(props) {
                 <thead>
                     <tr>
                         <th scope="col">Image</th>
-                        <th scope="col"
-                            className="sortCol"
-                            onClick={props.sortByName}
-                            data-value={props.sort}>
-                            Name <i className="fa fa-caret-down" aria-hidden="true"></i>
+                        <th scope="col" className="sortCol">
+                            Name
+                            <i onClick={props.sortByName} data-value={props.sort}
+                                className="fa fa-sort" aria-hidden="true"></i>
                         </th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
