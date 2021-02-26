@@ -20,7 +20,7 @@
 [Deployed Link]()
 
 ## Site Gif
-![Site]()
+![Site](./public/images/employee-list.gif)
 
 ## Technologies Used
 * HTML
