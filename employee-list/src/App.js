@@ -8,48 +8,37 @@ import API from "./utils/API";
 function App() {
 
   const [users, setUsers] = useState([]);
-  // const [users, setUsers] = useState([]);
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState([]);
+  // const [sort, setSort] = useState([]);
 
   useEffect(() => {
+    if (!search) {
+      return;
+    }
     loadUsers()
-  }, []);
-  // useEffect(() => {
-  //   if (!search) {
-  //     return;
-  //   }
-  //   loadUsers()
-  // }, [search]);
+  }, [search]);
 
   const loadUsers = () => {
-      API.getUsers()
-      .then((users) => {
-        setUsers(users)
-          })
-          .catch(err => console.log(err));
-        };
+    API.getUsers(search)
+    .then((users) => {
+      if (users.data.length === 0) {
+        throw new Error("No results found.");
+      }
+      setUsers(users)
+    })
+    .catch(err => console.log(err));
+  };
 
-  // const loadUsers = () => {
-  //   API.getUsers(search)
-  //   .then((users) => {
-  //     if (users.data.length === 0) {
-  //       throw new Error("No results found.");
-  //     }
-  //     setUsers(users)
-  //   })
-  //   .catch(err => console.log(err));
-  // };
-
-  // const handleInputChange = event => {
-  //   setSearch(event.target.value);
-  // };
+  const handleInputChange = event => {
+    setSearch(event.target.value);
+  };
 
   return(
     <div>
       <Jumbotron />
       <Search 
-      // handleInputChange={handleInputChange}
-      // results={search}
+      handleInputChange={handleInputChange}
+      results={search}
       />
       <Table 
       users={users}
